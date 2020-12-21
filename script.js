@@ -21,10 +21,15 @@ THEN I am presented with the last searched city forecast
 /* need onclick event
 need ajax function, get data for
 -current and future conditions
+Block 1 top
 -city name, the date, an icon representation of weather conditions, 
 the temperature, the humidity, the wind speed, and the UV index
+Block 2 Below
 -5 day forecast + conditions
--uv index
+-uv index icon
+Block 3 Left
+=Search funtion Displaying city names
+-onlcik event
 -icons
 
 Need function to convert kelvin to celcius
