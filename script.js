@@ -26,13 +26,13 @@ $(document).ready(function() {
 	function grabInput(){
 	
 		var city = $("#cityName").val();
-		// if city is empty
+		// if city is empty     === empty set "" ....empty string
 			// alter city cannot be empty
 		searchCityWeather(city);
 	}
     //searching api, gathering data
 	function searchCityWeather(city){
-		console.log(city);                                           //using back tick,Template literals/strings
+		console.log(city);                                       //using back tick,Template literals/strings
 		var queryURL = `http://api.openweathermap.org/data/2.5/weather?q=+${city}+&appid=5112d0108f86dc264863990862ea0d1c`
 		console.log(queryURL);
 		$.ajax({
@@ -44,7 +44,7 @@ $(document).ready(function() {
                 //gathering temperature data converting it from kelvin to celcius
                 var temp = parseInt(response.main.temp)-273.15;
 				console.log(Math.round(temp * 100) / 100+ " °C");
-
+                //adding humidity to the html, displaying
 				var humid = $("<p>").addClass("weather-text").text(`Humidity: ${response.main.humidity} %`);
 				console.log(humid);
 
@@ -53,11 +53,11 @@ $(document).ready(function() {
 				var temp;
 
 
-				// query URL for uv index
+				// query URL for uv index + ajax
 				// var uvURL = `http://api.openweathermap.org/data/2.5/uvi?appid=5112d0108f86dc264863990862ea0d1c&lat="+${lat}+"&lon="+${long},`
 
 
-				//forecast query URL
+				//5 day forecast query URL + ajax
 				// var forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
 
 			}
