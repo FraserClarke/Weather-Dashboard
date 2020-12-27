@@ -23,26 +23,136 @@
 <body>
     <!--Bootstrap...(Cards) or col/rows?-->
 
-<div>
 
-  <input id="cityName" type="text" name="search" placeholder="Enter city name...">
-  <button id="citySearchBtn">
-    <i class="fa fa-search"></i>
-  </button>
-</div>
-
-
-<div class="rows">
-    <div class=" cityWeather col1 search cities">
-        <div class="col2 display data">
-            <h3> 
-              <!-- 5 day forecast -->
-            </h3>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
         </div>
-    </div>
-</div>
-    
+    </nav>
+      
+<div class="container">
+        <!--Seach and list/links cities-->
+    <div class="row">
+        <div class= "col-md-3">
+            <div class="card" style="width: 18rem;">
+           
+                <div class="card-body">
+                    <h5 class="card-title">Search for a City</h5>
+                    <input id="cityName" type="text" name="search" placeholder="Enter city name...">
+                    <button id="citySearchBtn">
+                    <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            <!-- <div class="rows">
+                <div class=" cityWeather col1 search cities">
+                    <div class="col2 display data">
+                        <h3> 
+                         5 day forecast 
+                        </h3>
+                    </div>
+                </div>
+            </div> -->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div>
+          <!--todays forecast-->
+          
+          <div class="col-md-9">
+          <div class="card" style="width: 18rem;">
+            
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        
 
+          <!--5 Day forecast-->
+          <div class="row">
+              <div class="col-md-2.5">
+          
+                 <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                     <div class="card-header">Header                        
+                     </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                 </div>
+            </div>
+          
+            <div class="row">
+                <div class="col-md-2.5">
+            
+                   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                       <div class="card-header">Header                        
+                       </div>
+                          <div class="card-body">
+                              <h5 class="card-title">Primary card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          </div>
+                   </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2.5">
+            
+                   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                       <div class="card-header">Header                        
+                       </div>
+                          <div class="card-body">
+                              <h5 class="card-title">Primary card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          </div>
+                   </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2.5">
+            
+                   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                       <div class="card-header">Header                        
+                       </div>
+                          <div class="card-body">
+                              <h5 class="card-title">Primary card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          </div>
+                   </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2.5">
+            
+                   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                       <div class="card-header">Header                        
+                       </div>
+                          <div class="card-body">
+                              <h5 class="card-title">Primary card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          </div>
+                   </div>
+              </div>
+              </div>
+
+        </div>
+        </div>
+    
+       
+   
+
+
+    
+    
+</div>
 <!--scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
