@@ -57,37 +57,39 @@ $(document).ready(function() {
                 var windSpeed = parseInt(response.wind.speed);
                 console.log(windSpeed * 1.609);
                 //multiply the speed value by 1.609
-                var windSpeed = (Math.round(wind * 1.609));
+                var windSpeed = ((windSpeed * 1.609)).toFixed(2);
                 $(".displaySpeed").append(windSpeed);
             
             }
 				
         			
 		})
-
-        // query URL for uv index + ajax
-		// var uvURL = `http://api.openweathermap.org/data/2.5/uvi?appid=5112d0108f86dc264863990862ea0d1c&lat="+${lat}+"&lon="+${long},`
-
-        // function searchCityWeather(city){
-        //     console.log(city);                                       //using back tick,Template literals/strings
-        //     var queryURL = `http://api.openweathermap.org/data/2.5/uvi?appid=5112d0108f86dc264863990862ea0d1c&lat="+${lat}+"&lon="+${long},`
-        //     console.log(queryURL);
-        //     $.ajax({
-        //         type: "GET",
-        //         url: queryURL,
-        //         dataType: "json",
-        //         success: function(response){
-        //             console.log(response);
-                    
-
-        //5 day forecast query URL + ajax
-        // var forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
+      
+                   
+        
           }
+    
+    // query URL for uv index + ajax
+		             //function lat + long                        
+             var queryURL = `http://api.openweathermap.org/data/2.5/uvi?appid=5112d0108f86dc264863990862ea0d1c&lat="+${lat}+"&lon="+${long},`
+             $.ajax({
+                 type: "GET",
+                 url: queryURL,
+                 dataType: "json",
+                 success: function(response){
+                    console.log(response);
+    
+       
+                 }
+                 //5 day forecast query URL + ajax
+        // var forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
+    
     })
 
+    
 
 
-
+})
 
 	//need ajax function, get data for
 	// current condition
