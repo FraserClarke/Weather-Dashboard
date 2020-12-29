@@ -36,7 +36,7 @@
         <div class= "col-md-3">
             <div class="card" style="width: 18rem;">
            
-                <div class="card-body">
+                <div class="card-body cityWeather col1 search cities">
                     <h5 class="card-title">Search for a City</h5>
                     <input id="cityName" type="text" name="search" placeholder="Enter city name...">
                     <button id="citySearchBtn">
@@ -65,24 +65,25 @@
         </div>
           <!--todays forecast-->
           
-          <div class="col-md-9">
-          <div class="card" style="width: 18rem;">
+          <div class="col-md-9 display data" id="todayforecast">
+           <div class="card" >  
             
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <p class="card-text displayTemp"></p>
+              <p class="card-text displayHumid"></p>
+              <p class="card-text displaySpeed"></p>
+              <p class="card-text displayIndex"></p>
             </div>
           </div>
         
 
           <!--5 Day forecast-->
-          <div class="row">
-              <div class="col-md-2.5">
+          <div class="row" >
+              <div class="col-md-2.5" id="Dayone" >
           
                  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                     <div class="card-header">Header                        
-                     </div>
+                    
                         <div class="card-body">
                             <h5 class="card-title">Primary card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -90,12 +91,11 @@
                  </div>
             </div>
           
-            <div class="row">
-                <div class="col-md-2.5">
+            
+                <div class="col-md-2.5" id="Daytwo">
             
                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                       <div class="card-header">Header                        
-                       </div>
+                       
                           <div class="card-body">
                               <h5 class="card-title">Primary card title</h5>
                               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -103,12 +103,11 @@
                    </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-2.5">
+              
+                <div class="col-md-2.5" id="Daythree">
             
                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                       <div class="card-header">Header                        
-                       </div>
+                       
                           <div class="card-body">
                               <h5 class="card-title">Primary card title</h5>
                               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -116,12 +115,11 @@
                    </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-2.5">
+             
+                <div class="col-md-2.5" id="Dayfour">
             
                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                       <div class="card-header">Header                        
-                       </div>
+                       
                           <div class="card-body">
                               <h5 class="card-title">Primary card title</h5>
                               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -129,12 +127,11 @@
                    </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-2.5">
+              
+                <div class="col-md-2.5" id="Dayfive" >
             
                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                       <div class="card-header">Header                        
-                       </div>
+                       
                           <div class="card-body">
                               <h5 class="card-title">Primary card title</h5>
                               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

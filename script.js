@@ -45,25 +45,45 @@ $(document).ready(function() {
                 var temp = parseInt(response.main.temp)-273.15;
 				console.log(Math.round(temp * 100) / 100+ " °C");
                 //adding humidity to the html, displaying
-				var humid = $("<p>").addClass("weather-text").text(`Humidity: ${response.main.humidity} %`);
+                //var humid = $("<p>").addClass("weather-text").val(response.main.humidity) ;
+                var humid = parseInt(response.main.humidity) ;
 				console.log(humid);
 
-				$(".display").append(humid);
-
-				var temp;
-
-
-				// query URL for uv index + ajax
-				// var uvURL = `http://api.openweathermap.org/data/2.5/uvi?appid=5112d0108f86dc264863990862ea0d1c&lat="+${lat}+"&lon="+${long},`
-
-
-				//5 day forecast query URL + ajax
-				// var forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
-
-			}
+				$(".displayHumid").append(humid);
+                //$(".display").append(temp);
+                var temp = (Math.round(temp * 100) / 100+ " °C");
+                $(".displayTemp").append(temp);
+            
+                var windSpeed = parseInt(response.wind.speed);
+                console.log(windSpeed * 1.609);
+                //multiply the speed value by 1.609
+                var windSpeed = (Math.round(wind * 1.609));
+                $(".displaySpeed").append(windSpeed);
+            
+            }
+				
+        			
 		})
 
-	}
+        // query URL for uv index + ajax
+		// var uvURL = `http://api.openweathermap.org/data/2.5/uvi?appid=5112d0108f86dc264863990862ea0d1c&lat="+${lat}+"&lon="+${long},`
+
+        // function searchCityWeather(city){
+        //     console.log(city);                                       //using back tick,Template literals/strings
+        //     var queryURL = `http://api.openweathermap.org/data/2.5/uvi?appid=5112d0108f86dc264863990862ea0d1c&lat="+${lat}+"&lon="+${long},`
+        //     console.log(queryURL);
+        //     $.ajax({
+        //         type: "GET",
+        //         url: queryURL,
+        //         dataType: "json",
+        //         success: function(response){
+        //             console.log(response);
+                    
+
+        //5 day forecast query URL + ajax
+        // var forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
+          }
+    })
 
 
 
@@ -94,6 +114,5 @@ $(document).ready(function() {
 
 	// Need function to convert kelvin to celcius
 
-})
-
+            
 
