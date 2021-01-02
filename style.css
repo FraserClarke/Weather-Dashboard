@@ -1,5 +1,13 @@
-nav {
+header {
     text-align: center;
     width: 100%;
+    background-color: slategray;
+    color: white;
+    padding-bottom: 15px;
+}
+
+.cities {
+    width:100%;
+
 }
 
