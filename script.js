@@ -90,7 +90,7 @@ $(document).ready(function() {
                 var humid = parseInt(response.main.humidity) ;
 				console.log(humid);
 
-				$(".displayHumid").append(humid);
+				$(".displayHumid").append("humidity: " + humid + "%");
                 //$(".display").append(temp);
                 var temp = "Temperature: " + (Math.round(temp * 100) / 100+ " °C");
                 $(".displayTemp").append(temp);
@@ -98,7 +98,7 @@ $(document).ready(function() {
                 var windSpeed = parseInt(response.wind.speed);
                 console.log(windSpeed * 1.609);
                 //multiply the speed value by 1.609
-                var windSpeed = ((windSpeed * 1.609)).toFixed(2);
+                var windSpeed = "Wind Speed: " + ((windSpeed * 1.609)).toFixed(2) + " Km/h";
                 $(".displaySpeed").append(windSpeed);
 				// query URL for uv index + ajax
 		             //function lat + long 
@@ -113,7 +113,7 @@ $(document).ready(function() {
 					dataType: "json",
 					success: function(response){
 						var uvIndex = response.value;
-						$(".displayIndex").append(uvIndex);
+						$(".displayIndex").append("Uv Index: " + uvIndex);
                     
                 }
 		        
@@ -122,23 +122,26 @@ $(document).ready(function() {
                 //          5 day forecast query URL + ajax
 		        // var forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
                 
-                var forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=+${city}+&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
-                console.log(forecastURL);
-                $.ajax({
-					type: "GET",
-					url: queryURL,
-					dataType: "json",
-					success: function(response){
-						console.log(response);
-                    
-                }
-                })
+               
             
 		        
             }
 							
 		})
-      
+     
+        var forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=+${city}&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
+        console.log(forecastURL);
+            $.ajax({
+                type: "GET",
+                url: queryURL,
+                dataType: "json",
+                success: function(response){
+                    console.log(response);
+                
+            }
+            })
+
+
     }
     
     

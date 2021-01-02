@@ -24,11 +24,11 @@
     <!--Bootstrap...(Cards) or col/rows?-->
 
 
-    <nav class="navbar navbar-dark bg-dark">
+    <header class="Dashboard header">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
+          <h1> Weather Dashboard </h1>
         </div>
-    </nav>
+    </header>
       
 <div class="container">
         <!--Seach and list/links cities-->
@@ -53,10 +53,7 @@
                 </div>
             </div> -->
          
-            <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
+            
           </div>
 
              <div class="card" id="previousSearches">
@@ -71,7 +68,7 @@
            <div class="card" >  
             
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title DisplayTodaysDate">Todays Forecast</h5>
               <p class="card-text displayTemp"></p>
               <p class="card-text displayHumid"></p>
               <p class="card-text displaySpeed"></p>
@@ -82,62 +79,77 @@
 
           <!--5 Day forecast-->
           <div class="row" >
-              <div class="col-md-2.5" id="Dayone" >
+              <div class="col-md-9 Forecast DayZero" id="DayZero" >
           
-                 <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                 <div class="card text-white bg-primary mb-3">
                     
                         <div class="card-body">
-                            <h5 class="card-title">Primary card title</h5>
+                            <h5 class="card-title forecastDateZero">Primary card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class = "forecastTempZero"></p>
+                            <p class = "forcastHumidZero"></p>
+                            <img src = "" class = "forecastIconZero">
                         </div>
                  </div>
             </div>
           
             
-                <div class="col-md-2.5" id="Daytwo">
+                <div class="card Forecast DayOne" id="DayOne">
             
-                   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                   <div class="card text-white bg-primary mb-3" >
                        
                           <div class="card-body">
-                              <h5 class="card-title">Primary card title</h5>
+                              <h5 class="card-title forecastDateOne">Primary card title</h5>
                               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <p class="forecastTempOne"></p>
+                              <p class = "forecastHumidOne"></p>
+                              <img src = "" class = "forecastIconOne">
                           </div>
                    </div>
               </div>
 
               
-                <div class="col-md-2.5" id="Daythree">
+                <div class="Forecast DayTwo" id="DayTwo">
             
-                   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                   <div class="card text-white bg-primary mb-3">
                        
-                          <div class="card-body">
-                              <h5 class="card-title">Primary card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          </div>
+                    <div class="card-body">
+                        <h5 class="card-title forecastDateOne">Primary card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="forecastTempTwo"></p>
+                        <p class = "forecastHumidTwo"></p>
+                        <img src = "" class = "forecastIconTwo">
+                    </div>
                    </div>
               </div>
 
              
-                <div class="col-md-2.5" id="Dayfour">
+                <div class="Forecast DayThree" id="DayThree">
             
-                   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                   <div class="card text-white bg-primary mb-3" >
                        
-                          <div class="card-body">
-                              <h5 class="card-title">Primary card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          </div>
+                    <div class="card-body">
+                        <h5 class="card-title forecastDateOne">Primary card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="forecastTempThree"></p>
+                        <p class = "forecastHumidThree"></p>
+                        <img src = "" class = "forecastIconThree">
+                    </div>
                    </div>
               </div>
 
               
-                <div class="col-md-2.5" id="Dayfive" >
+                <div class="Forecast DayFour" id="DayFour" >
             
-                   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                   <div class="card text-white bg-primary mb-3" >
                        
-                          <div class="card-body">
-                              <h5 class="card-title">Primary card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          </div>
+                    <div class="card-body">
+                        <h5 class="card-title forecastDateFour">Primary card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="forecastTempFour"></p>
+                        <p class = "forecastHumidFour"></p>
+                        <img src = "" class = "forecastIconFour">
+                    </div>
                    </div>
               </div>
               </div>
