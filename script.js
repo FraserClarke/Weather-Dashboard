@@ -70,7 +70,7 @@ $(document).ready(function() {
 		// alter city cannot be empty
 		searchCityWeather(city);
 	}
-    //searching api, gathering data
+    //searching api, gathering data CURRENT DAY AJAX
 	function searchCityWeather(city){
 		clear()
 		saveCityToLS(city);
@@ -101,7 +101,8 @@ $(document).ready(function() {
                 //multiply the speed value by 1.609
                 var windSpeed = "Wind Speed: " + ((windSpeed * 1.609)).toFixed(2) + " Km/h";
                 $(".displaySpeed").append(windSpeed);
-				// query URL for uv index + ajax
+                
+                // query URL for UV INDEX + ajax
 		             //function lat + long 
                 var lon = response.coord.lon;
                 var lat = response.coord.lat;
@@ -120,7 +121,7 @@ $(document).ready(function() {
 		        
                
                 })
-                //          5 day forecast query URL + ajax
+                //          5 day FORECAST query URL + ajax
 		        // var forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
                 //api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
                //var city
