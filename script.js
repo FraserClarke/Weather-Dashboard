@@ -34,7 +34,8 @@ $(document).ready(function() {
 	function clear(){
 		$(".displayTemp").empty();
 		$(".displayHumid").empty();
-		$(".displayIndex").empty();
+        $(".displayIndex").empty();
+        $(".displaySpeed").empty();
 	}
 	//for loop, going through the array, getting last searched city
 	function renderCities(cities){
@@ -121,30 +122,32 @@ $(document).ready(function() {
                 })
                 //          5 day forecast query URL + ajax
 		        // var forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
-                
-               
+                //api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+               //var city
+     //var city=cityName;
+     var forecastURL = //`http://api.openweathermap.org/data/2.5/forecast?q=+${city}&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
+     `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=5112d0108f86dc264863990862ea0d1c`
+     console.log(forecastURL);
+         $.ajax({
+             type: "GET",
+             url: queryURL,
+             dataType: "json",
+             success: function(response){
+                 console.log(response);
+             
+         }
+         })
             
 		        
             }
 							
 		})
-     
-        var forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=+${city}&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
-        console.log(forecastURL);
-            $.ajax({
-                type: "GET",
-                url: queryURL,
-                dataType: "json",
-                success: function(response){
-                    console.log(response);
-                
-            }
-            })
-
+       
 
     }
     
-    
+     
+
 	//function pushing cities into the array, local storage
 	function saveCityToLS(cityName){
 		if (searchedCities.indexOf(cityName) === -1) {
