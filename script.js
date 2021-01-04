@@ -131,7 +131,7 @@ $(document).ready(function() {
      console.log(forecastURL);
          $.ajax({
              type: "GET",
-             url: queryURL,
+             url: forecastURL,
              dataType: "json",
              success: function(response){
                  console.log(response);
