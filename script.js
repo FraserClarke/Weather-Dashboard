@@ -139,8 +139,13 @@ $(document).ready(function() {
                             //Get from array index number 3, as it represents 12:00pm
                                                     //parseInt()??????
                                                     //for loop var i = list???
-                            var forecastCallDate = response.list[3].dt_txt.value;
+                            var forecastCallDate = response.list[3].dt_txt;
                             console.log(forecastCallDate);
+                            var forecastCallTemp = parseInt(response.list[3].main.temp)-273.15;
+                            console.log(Math.round(forecastCallTemp * 100) / 100+ " °C");
+                            var forecastCallHumidity = response.list[3].main.humidity;
+                            console.log(forecastCallHumidity);
+                            //3, 11, goes up by + 8. Need list for. [3],[7],[11],[19],[27] 
              
          }
          })
