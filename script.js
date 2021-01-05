@@ -146,7 +146,7 @@ $(document).ready(function() {
                             var forecastCallHumidity = response.list[3].main.humidity;
                             console.log(forecastCallHumidity);
                             //3, 11, goes up by + 8. Need list for. [3],[7],[11],[19],[27] 
-             
+                            // for var = i 3 + 8????
          }
          })
             
