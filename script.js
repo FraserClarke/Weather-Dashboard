@@ -154,7 +154,8 @@ $(document).ready(function() {
                                 //$(".forecastTempZero").append(Math.round(response.list[i].main.temp));
                                    //  Trying to grab The information from array objects ive created and eppend them to
                                    //  correct class/id's in html. eg, zero one two three etc
-                                $("forecastTempZero").append(array[0]) //object
+                                //$(".forecastTempZero").append(array[0]) //object???
+                                $(".forecastTempZero").append(forecastCallDate);
 
                         }}
             })
