@@ -121,20 +121,26 @@ $(document).ready(function() {
 		        
                
                 })
-                //          5 day FORECAST query URL + ajax
-		        // var forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
-                //api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
-               //var city
-     //var city=cityName;
-     var forecastURL = //`http://api.openweathermap.org/data/2.5/forecast?q=+${city}&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
-     `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=5112d0108f86dc264863990862ea0d1c`
-     console.log(forecastURL);
-         $.ajax({
-             type: "GET",
-             url: forecastURL,
-             dataType: "json",
-             success: function(response){
-                 console.log(response);
+                            //          5 day FORECAST query URL + ajax
+                            // var forecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
+                            //api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+                        //var city
+                //var city=cityName;
+                var forecastURL = //`http://api.openweathermap.org/data/2.5/forecast?q=+${city}&appid=5112d0108f86dc264863990862ea0d1c&units=imperial`
+                `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=5112d0108f86dc264863990862ea0d1c`
+                console.log(forecastURL);
+                    $.ajax({
+                        type: "GET",
+                        url: forecastURL,
+                        dataType: "json",
+                        //display Date, Icon, Temp Humdidity
+                        success: function(response){
+                            console.log(response);
+                            //Get from array index number 3, as it represents 12:00pm
+                                                    //parseInt()??????
+                                                    //for loop var i = list???
+                            var forecastCallDate = response.list[3].dt_txt.value;
+                            console.log(forecastCallDate);
              
          }
          })
