@@ -136,21 +136,28 @@ $(document).ready(function() {
                         //display Date, Icon, Temp Humdidity
                         success: function(response){
                             console.log(response);
-                            //Get from array index number 3, as it represents 12:00pm
-                                                    //parseInt()??????
-                                                    //for loop var i = list???
-                            var forecastCallDate = response.list[3].dt_txt;
-                            console.log(forecastCallDate);
-                            var forecastCallTemp = parseInt(response.list[3].main.temp)-273.15;
-                            console.log(Math.round(forecastCallTemp * 100) / 100+ " °C");
-                            var forecastCallHumidity = response.list[3].main.humidity;
-                            console.log(forecastCallHumidity);
+                            
                             //3, 11, goes up by + 8. Need list for. [3],[7],[11],[19],[27] 
                             // for var = i 3 + 8????
                             for ( var i = 4; i < response.list.length; i = i + 8 ) {   // or i +=8
                                 console.log(response.list[i]); //minus 3???
-                            }}
-         })
+                            //Get from array index number 3, as it represents 12:00pm
+                                                    //parseInt()??????
+                                                    //for loop var i = list???
+                                                    var forecastCallDate = response.list[i].dt_txt;
+                                                    console.log(forecastCallDate);
+                                                    var forecastCallTemp = parseInt(response.list[i].main.temp)-273.15;
+                                                    console.log(Math.round(forecastCallTemp * 100) / 100+ " °C");
+                                                    var forecastCallHumidity = response.list[i].main.humidity;
+                                                    console.log(forecastCallHumidity);
+                            
+                                //$(".forecastTempZero").append(Math.round(response.list[i].main.temp));
+                                   //  Trying to grab The information from array objects ive created and eppend them to
+                                   //  correct class/id's in html. eg, zero one two three etc
+                                $("forecastTempZero").append(array[0]) //object
+
+                        }}
+            })
             
 		        
             }
