@@ -147,7 +147,9 @@ $(document).ready(function() {
                             console.log(forecastCallHumidity);
                             //3, 11, goes up by + 8. Need list for. [3],[7],[11],[19],[27] 
                             // for var = i 3 + 8????
-         }
+                            for ( var i = 4; i < response.list.length; i = i + 8 ) {   // or i +=8
+                                console.log(response.list[i]); //minus 3???
+                            }}
          })
             
 		        
