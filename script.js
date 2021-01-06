@@ -136,6 +136,7 @@ $(document).ready(function() {
                         //display Date, Icon, Temp Humdidity
                         success: function(response){
                             console.log(response);
+                            $("#temp").empty();
                             
                             //3, 11, goes up by + 8. Need list for. [3],[7],[11],[19],[27] 
                             // for var = i 3 + 8????
@@ -156,13 +157,17 @@ $(document).ready(function() {
                                    //  correct class/id's in html. eg, zero one two three etc
                                 //$(".forecastTempZero").append(array[0]) //object???
                                // $(".forecastTempZero").append(forecastCallDate); //doesnt work have to create html
-                               
-                               var card1 = `<div>
+                               //.empty();
+                                    //<p> Temperature : ${response.list[i].main.temp};
+                                //using backticks to create h1, p tags to create a new card
+                                var card1 = `<div>
                                 <h1> Forecast </h1>
-                                <p> Temperature : ${response.list[i].main.temp};
-                                <p> Humidity : ${response.list[i].main.humidity};
-                                <p> Date : ${response.list[i].di_txt};
+                                <p> Temperature : ${forecastCallTemp.toFixed(2)}  
+                                <p> Humidity : ${response.list[i].main.humidity}
+                                <p> Date : ${forecastCallDate}
                                 </div>`;
+
+                                $("#temp").append(card1);
                             //var card = $('div').append(response.list[i].main.temp);
                             // variable to create the card and plug in the values you want from the response
                             // and then append that variable to an element on the html page and it will plug the card in
