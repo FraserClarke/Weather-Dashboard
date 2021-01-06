@@ -155,7 +155,22 @@ $(document).ready(function() {
                                    //  Trying to grab The information from array objects ive created and eppend them to
                                    //  correct class/id's in html. eg, zero one two three etc
                                 //$(".forecastTempZero").append(array[0]) //object???
-                                $(".forecastTempZero").append(forecastCallDate);
+                               // $(".forecastTempZero").append(forecastCallDate); //doesnt work have to create html
+                               
+                               var card1 = `<div>
+                                <h1> Forecast </h1>
+                                <p> Temperature : ${response.list[i].main.temp};
+                                <p> Humidity : ${response.list[i].main.humidity};
+                                <p> Date : ${response.list[i].di_txt};
+                                </div>`;
+                            //var card = $('div').append(response.list[i].main.temp);
+                            // variable to create the card and plug in the values you want from the response
+                            // and then append that variable to an element on the html page and it will plug the card in
+                            
+                            //  use ${variablename} to plug in the names of the data
+
+                                
+
 
                         }}
             })
