@@ -151,7 +151,7 @@ $(document).ready(function() {
                                                     console.log(Math.round(forecastCallTemp * 100) / 100+ " °C");
                                                     var forecastCallHumidity = response.list[i].main.humidity;
                                                     console.log(forecastCallHumidity);
-                            
+                                                    
                                 //$(".forecastTempZero").append(Math.round(response.list[i].main.temp));
                                    //  Trying to grab The information from array objects ive created and eppend them to
                                    //  correct class/id's in html. eg, zero one two three etc
@@ -161,12 +161,12 @@ $(document).ready(function() {
                                     //<p> Temperature : ${response.list[i].main.temp};
                                 //using backticks to create h1, p tags to create a new card
                                 var card1 = `<div>
-                                <h1> Forecast </h1>
+                                <h4> ${forecastCallDate} </h4>
                                 <p> Temperature : ${forecastCallTemp.toFixed(2)}  
                                 <p> Humidity : ${response.list[i].main.humidity}
-                                <p> Date : ${forecastCallDate}
+                                 
                                 </div>`;
-
+                                
                                 $("#temp").append(card1);
                             //var card = $('div').append(response.list[i].main.temp);
                             // variable to create the card and plug in the values you want from the response
