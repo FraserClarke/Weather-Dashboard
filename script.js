@@ -174,6 +174,13 @@ $(document).ready(function() {
                             
                             //  use ${variablename} to plug in the names of the data
 
+
+                            //06/01/21
+                            //Get icon data for Uv index, forecast. Icon...img
+                            //Get rid of time in forecastcalldate
+                            //Add percentage and degress C to forecast
+                            //Add css, appropriate layout, text, colors etc
+                            //
                                 
 
 
