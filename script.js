@@ -151,6 +151,8 @@ $(document).ready(function() {
                                                     console.log(Math.round(forecastCallTemp * 100) / 100+ " °C");
                                                     var forecastCallHumidity = response.list[i].main.humidity;
                                                     console.log(forecastCallHumidity);
+                                                    var forecastCallIcon = response.list[i].weather[0].icon
+                                                    console.log(forecastCallIcon);
                                                     
                                 //$(".forecastTempZero").append(Math.round(response.list[i].main.temp));
                                    //  Trying to grab The information from array objects ive created and eppend them to
@@ -160,11 +162,12 @@ $(document).ready(function() {
                                //.empty();
                                     //<p> Temperature : ${response.list[i].main.temp};
                                 //using backticks to create h1, p tags to create a new card
+                                //`http://openweathermap.org/img/wn/${forecast.response.list[i].weather[0].icon}@2x.png`    //or icon?
                                 var card1 = `<div>
                                 <h4> ${forecastCallDate} </h4>
+                                <img src= ${`http://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png`} /img>
                                 <p> Temperature : ${forecastCallTemp.toFixed(2)}  
-                                <p> Humidity : ${response.list[i].main.humidity}
-                                 
+                                <p> Humidity : ${response.list[i].main.humidity}                                
                                 </div>`;
                                 
                                 $("#temp").append(card1);
@@ -180,7 +183,8 @@ $(document).ready(function() {
                             //Get rid of time in forecastcalldate
                             //Add percentage and degress C to forecast
                             //Add css, appropriate layout, text, colors etc
-                            //
+                            //fix list display
+                            //arrange forecast columns
                                 
 
 
