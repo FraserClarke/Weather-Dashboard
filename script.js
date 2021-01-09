@@ -101,7 +101,27 @@ $(document).ready(function() {
                 //multiply the speed value by 1.609
                 var windSpeed = "Wind Speed: " + ((windSpeed * 1.609)).toFixed(2) + " Km/h";
                 $(".displaySpeed").append(windSpeed);
+
                 
+
+                //Display city name
+                
+                
+                var cityDisplay = (response.name + " ");
+                console.log(cityDisplay);
+                $(".DisplayName").append(cityDisplay);
+                
+                var TodaysDate = moment().format('L');
+                $('.DisplayTodaysDate').append(TodaysDate);
+                
+                //Display Icon
+
+                var displayIcon = (response.weather[0].icon);
+                console.log(displayIcon);
+                var iconCard = `<img src= ${`http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`} /img>`;
+                //$('<img>').attr('src', ${`http://openweathermap.org/img/wn/$
+                $('.DisplayTodayIcon').append(iconCard);
+                //http://openweathermap.org/img/wn/10d@2x.png
                 // query URL for UV INDEX + ajax
 		             //function lat + long 
                 var lon = response.coord.lon;
@@ -124,6 +144,7 @@ $(document).ready(function() {
                         var uvIndex = response.value;
 						$(".displayIndex").append("Uv Index: " + uvIndex);
                         console.log(uvIndex);
+                        
                         // if uvIndex >= 0 node.style.color = 'green'
                         // else uvIndex >= 3 node.style.color= 'yellow'
                         // else uvIndex >= 6
@@ -174,7 +195,8 @@ $(document).ready(function() {
                             
                             //3, 11, goes up by + 8. Need list for. [3],[7],[11],[19],[27] 
                             // for var = i 3 + 8????
-                            for ( var i = 4; i < response.list.length; i = i + 8 ) {   // or i +=8
+                            //ISSUE HERE , NEED CORRECT DATE had i=4, changed to 8, displays 4 not five, not long enough
+                            for ( var i = 8; i < response.list.length; i = i + 8 ) {   // or i +=8
                                 console.log(response.list[i]); //minus 3???
                             //Get from array index number 3, as it represents 12:00pm
                                                     //parseInt()??????
@@ -200,8 +222,8 @@ $(document).ready(function() {
                                 var card1 = `<div>
                                 <h4> ${forecastCallDate} </h4>
                                 <img src= ${`http://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png`} /img>
-                                <p> Temperature : ${forecastCallTemp.toFixed(2)}  
-                                <p> Humidity : ${response.list[i].main.humidity}                                
+                                <p> Temperature : ${forecastCallTemp.toFixed(2)}°C 
+                                <p> Humidity : ${response.list[i].main.humidity}%                               
                                 </div>`;
                                 
                                 $("#temp").append(card1);
@@ -219,7 +241,13 @@ $(document).ready(function() {
                             //Add css, appropriate layout, text, colors etc
                             //fix list display
                             //arrange forecast columns
-                            //Fix times
+                            //09/01/21
+                            //Fix times....sometimes +3 or 6
+                            //CITY NAME NEXT TO DATE IN TODAY TEMP
+                            //Delete time in date display
+                            //add css....layout, colors
+                            //fix list.... add buttons
+
                                 
 
 
