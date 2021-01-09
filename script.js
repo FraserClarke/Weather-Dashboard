@@ -130,16 +130,16 @@ $(document).ready(function() {
                         // else uvIndex >= 8
                         // else uvindex >= 11
                         //if (uvIndex > 0 || = 2 ) {
-                        if (uvIndex > 0  ) {
+                        if (uvIndex > 0 && uvIndex < 2 ) {
                             $("#uvColor").addClass('low');
                         }
-                        else if (uvIndex >= 3) {
+                        else if (uvIndex > 3 && uvIndex < 5 ) {
                             $("#uvColor").addClass('moderate');
                         }
-                        else if (uvIndex >= 6) {
+                        else if (uvIndex > 6 && uvIndex < 7) {
                             $("#uvColor").addClass('high');
                         }
-                        else if (uvIndex >= 8) {
+                        else if (uvIndex > 8 && uvIndex < 10 ) {
                             $("#uvColor").addClass('vHigh');
                         }
                         else if (uvIndex >= 11) {
