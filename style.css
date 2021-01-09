@@ -11,3 +11,23 @@ header {
 
 }
 
+.low {
+    background-color: green;
+
+}
+
+.moderate {
+    background-color: yellow;
+}
+
+.high {
+    background-color: orange;
+}
+
+.vHigh {
+    background-color: red;
+}
+
+.extreme {
+    background-color: violet;
+}

@@ -108,16 +108,50 @@ $(document).ready(function() {
                 var lat = response.coord.lat;
 
                 var queryURL = `http://api.openweathermap.org/data/2.5/uvi?appid=5112d0108f86dc264863990862ea0d1c&lat=${lat}&lon=${lon}`
-		        // console.log(queryURL);
+		         console.log(queryURL);
 		        $.ajax({
 					type: "GET",
 					url: queryURL,
 					dataType: "json",
 					success: function(response){
-						var uvIndex = response.value;
+                        //Color---Favourable /Moderate / Severe
+                        //low 0-2 green
+                        //moderate 3-5 yellow
+                        //high 6-7 orange
+                        //very high 8-10 red
+                        //extreme 11+ violet
+                        console.log(response);
+                        var uvIndex = response.value;
 						$(".displayIndex").append("Uv Index: " + uvIndex);
-                    
-                }
+                        console.log(uvIndex);
+                        // if uvIndex >= 0 node.style.color = 'green'
+                        // else uvIndex >= 3 node.style.color= 'yellow'
+                        // else uvIndex >= 6
+                        // else uvIndex >= 8
+                        // else uvindex >= 11
+                        //if (uvIndex > 0 || = 2 ) {
+                        if (uvIndex > 0  ) {
+                            $("#uvColor").addClass('low');
+                        }
+                        else if (uvIndex >= 3) {
+                            $("#uvColor").addClass('moderate');
+                        }
+                        else if (uvIndex >= 6) {
+                            $("#uvColor").addClass('high');
+                        }
+                        else if (uvIndex >= 8) {
+                            $("#uvColor").addClass('vHigh');
+                        }
+                        else if (uvIndex >= 11) {
+                            $("#uvColor").addClass('extreme');
+                        }
+                        // 
+                        // $("#uvColor").addClass('high');
+                        // $("#uvColor").addClass('very high');
+                        // $("#uvColor").addClass('extreme');
+                        
+                        
+                    }
 		        
                
                 })
@@ -185,6 +219,7 @@ $(document).ready(function() {
                             //Add css, appropriate layout, text, colors etc
                             //fix list display
                             //arrange forecast columns
+                            //Fix times
                                 
 
 
