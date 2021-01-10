@@ -12,10 +12,16 @@ header {
 }
 
 .forecastCard{
-    padding: 12px;
+    
     background-color: royalblue;
     color: white;
-   
+    margin: 10px;
+    border-radius: 5px;
+}
+
+li {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
 }
 
 #temp {
@@ -28,21 +34,25 @@ ul {
 
 .low {
     background-color: green;
-
+    border-radius: 5px;
 }
 
 .moderate {
     background-color: yellow;
+    border-radius: 5px;
 }
 
 .high {
     background-color: orange;
+    border-radius: 5px;
 }
 
 .vHigh {
     background-color: red;
+    border-radius: 5px;
 }
 
 .extreme {
     background-color: violet;
+    border-radius: 5px;
 }
