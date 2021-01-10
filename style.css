@@ -11,6 +11,17 @@ header {
 
 }
 
+.forecastCard{
+    padding: 12px;
+    background-color: royalblue;
+    color: white;
+   
+}
+
+#temp {
+    width:100%;
+}
+
 ul {
     list-style: none;
 }

@@ -218,7 +218,7 @@ $(document).ready(function() {
                                     var forecastCallIcon = response.list[i].weather[0].icon
                                     console.log(forecastCallIcon);  
 
-                                     var card1 = `<div class='col-md-2.5'>
+                                     var card1 = `<div class='col-md-2.5 forecastCard'>
                                     <h4> ${forecastCallDate} </h4>
                                     <img src= ${`http://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png`} /img>
                                     <p> Temperature : ${forecastCallTemp.toFixed(2)}°C 
