@@ -11,6 +11,10 @@ header {
 
 }
 
+ul {
+    list-style: none;
+}
+
 .low {
     background-color: green;
 

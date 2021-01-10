@@ -32,6 +32,8 @@ $(document).ready(function() {
 	}
 	//clearing functions so they dont repeat on html.... add others relevent
 	function clear(){
+        $(".DisplayName").empty();
+        $(".DisplayTodaysDate").empty();
 		$(".displayTemp").empty();
 		$(".displayHumid").empty();
         $(".displayIndex").empty();
@@ -56,7 +58,10 @@ $(document).ready(function() {
 		li.text(city);
 		$("#previousSearches ul").append(li);
 	}
-	
+    
+    $("#previousSearches ul").on("click", "li", function(){
+        searchCityWeather($(this).text());
+    })
 
 
 	//need onclick event
@@ -196,19 +201,32 @@ $(document).ready(function() {
                             //3, 11, goes up by + 8. Need list for. [3],[7],[11],[19],[27] 
                             // for var = i 3 + 8????
                             //ISSUE HERE , NEED CORRECT DATE had i=4, changed to 8, displays 4 not five, not long enough
-                            for ( var i = 8; i < response.list.length; i = i + 8 ) {   // or i +=8
+                            for ( var i = 0; i < response.list.length; i++) {   // or i +=8
                                 console.log(response.list[i]); //minus 3???
                             //Get from array index number 3, as it represents 12:00pm
-                                                    //parseInt()??????
-                                                    //for loop var i = list???
-                                                    var forecastCallDate = response.list[i].dt_txt;
-                                                    console.log(forecastCallDate);
-                                                    var forecastCallTemp = parseInt(response.list[i].main.temp)-273.15;
-                                                    console.log(Math.round(forecastCallTemp * 100) / 100+ " °C");
-                                                    var forecastCallHumidity = response.list[i].main.humidity;
-                                                    console.log(forecastCallHumidity);
-                                                    var forecastCallIcon = response.list[i].weather[0].icon
-                                                    console.log(forecastCallIcon);
+                                //parseInt()??????
+                                //for loop var i = list???
+                                console.log(response.list[i].dt_txt.indexOf("03:00:00"))
+                                if (response.list[i].dt_txt.indexOf("03:00:00") > -1){
+                                    console.log("text----------")
+                                     var forecastCallDate = response.list[i].dt_txt;
+                                     forecastCallDate = forecastCallDate.slice(0,10);
+                                    var forecastCallTemp = parseInt(response.list[i].main.temp)-273.15;
+                                    console.log(Math.round(forecastCallTemp * 100) / 100+ " °C");
+                                    var forecastCallHumidity = response.list[i].main.humidity;
+                                    console.log(forecastCallHumidity);
+                                    var forecastCallIcon = response.list[i].weather[0].icon
+                                    console.log(forecastCallIcon);  
+
+                                     var card1 = `<div>
+                                    <h4> ${forecastCallDate} </h4>
+                                    <img src= ${`http://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png`} /img>
+                                    <p> Temperature : ${forecastCallTemp.toFixed(2)}°C 
+                                    <p> Humidity : ${response.list[i].main.humidity}%                               
+                                    </div>`;
+                                    
+                                    $("#temp").append(card1);
+                                }
                                                     
                                 //$(".forecastTempZero").append(Math.round(response.list[i].main.temp));
                                    //  Trying to grab The information from array objects ive created and eppend them to
@@ -219,14 +237,7 @@ $(document).ready(function() {
                                     //<p> Temperature : ${response.list[i].main.temp};
                                 //using backticks to create h1, p tags to create a new card
                                 //`http://openweathermap.org/img/wn/${forecast.response.list[i].weather[0].icon}@2x.png`    //or icon?
-                                var card1 = `<div>
-                                <h4> ${forecastCallDate} </h4>
-                                <img src= ${`http://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png`} /img>
-                                <p> Temperature : ${forecastCallTemp.toFixed(2)}°C 
-                                <p> Humidity : ${response.list[i].main.humidity}%                               
-                                </div>`;
                                 
-                                $("#temp").append(card1);
                             //var card = $('div').append(response.list[i].main.temp);
                             // variable to create the card and plug in the values you want from the response
                             // and then append that variable to an element on the html page and it will plug the card in
