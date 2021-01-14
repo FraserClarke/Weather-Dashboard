@@ -9,6 +9,7 @@ Weather dashboard utilizing API's
 
 
 **[Weather Dashboard Webpage](https://fraserclarke.github.io/Weather-Dashboard/)**
+
 **[Git hub repository](https://github.com/FraserClarke/Weather-Dashboard)**
 
 
@@ -37,7 +38,7 @@ SO THAT I can plan a trip accordingly
 
 The following image shows the web application's appearance & functionality:
 
-![Cocktails & Cuisines](/imgLink)
+![Weather Dashboard](https://raw.githubusercontent.com/FraserClarke/Weather-Dashboard/main/assets/Screenshot.png)
 
 ## Credits
 
